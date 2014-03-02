@@ -30,17 +30,17 @@
   ],
   "post-processors": [
     {
-      "type": "vsphere",
-      "host": "vslab.dky.io",
-      "username": "vsphere@vsphere.local",
-      "password": "example",
-      "datacenter": "labdc",
+		"type": "vsphere",
+		"host": "vslab.dky.io",
+		"username": "vsphere@vsphere.local",
+		"password": "example",
+		"datacenter": "labdc",
 		"cluster": "openstack",
 		"resource_pool": " ",
 		"datastore": "ds1",
 		"vm_folder": "/",
-      "vm_name": "packer-rhel6-64",
-      "vm_network": "Production",
+		"vm_name": "packer-rhel6-64",
+		"vm_network": "Production",
 		"insecure": "true"
     }
   ],
