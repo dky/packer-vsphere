@@ -1,61 +1,61 @@
 {
-  "builders": [
-    {
-      "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/rhel6.ks.cfg<enter><wait>"
-      ],
-      "boot_wait": "5s",
-      "disk_size": 10480,
-      "guest_os_type": "rhel6-64",
-      "headless": false,
-      "http_directory": "http",
-      "iso_checksum": "8e412886d663959f31c760d883bcd7b9",
-      "iso_checksum_type": "md5",
-      "iso_url": "file:/iso/rhel-server-6.5-i386-boot.iso",
-      "name": "rhel6-64",
-      "shutdown_command": "shutdown -h now",
-      "skip_compaction": false,
-      "ssh_password": "install",
-      "ssh_port": 22,
-      "ssh_username": "root",
-      "ssh_wait_timeout": "10000s",
-      "tools_upload_flavor": "linux",
-      "type": "vmware-iso",
-      "vmx_data": {
-        "cpuid.coresPerSocket": "1",
-        "memsize": "480",
-        "numvcpus": "1"
-      }
-    }
-  ],
-  "post-processors": [
-    {
-		"type": "vsphere",
-		"host": "vslab.dky.io",
-		"username": "vsphere@vsphere.local",
-		"password": "example",
-		"datacenter": "labdc",
-		"cluster": "openstack",
-		"resource_pool": " ",
-		"datastore": "ds1",
-		"vm_folder": "/",
-		"vm_name": "packer-rhel6-64",
-		"vm_network": "Production",
-		"insecure": "true"
-    }
-  ],
-  "provisioners": [
-    {
-      "scripts": [
-        "scripts/vagrant.sh",
-        "scripts/mac.sh",
-        "scripts/sudo.sh",
-        "scripts/ssh.sh",
-        "scripts/vmtools.sh",
-        "scripts/zero.sh"
-      ],
-      "type": "shell"
-    }
-  ]
+	"builders": [
+	{
+		"boot_command": [
+			"<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/rhel6.ks.cfg<enter><wait>"
+			],
+		"boot_wait": "5s",
+		"disk_size": 10480,
+		"guest_os_type": "rhel6-64",
+		"headless": false,
+		"http_directory": "http",
+		"iso_checksum": "8e412886d663959f31c760d883bcd7b9",
+		"iso_checksum_type": "md5",
+		"iso_url": "file:/iso/rhel-server-6.5-i386-boot.iso",
+		"name": "rhel6-64",
+		"shutdown_command": "shutdown -h now",
+		"skip_compaction": false,
+		"ssh_password": "install",
+		"ssh_port": 22,
+		"ssh_username": "root",
+		"ssh_wait_timeout": "10000s",
+		"tools_upload_flavor": "linux",
+		"type": "vmware-iso",
+		"vmx_data": {
+			"cpuid.coresPerSocket": "1",
+			"memsize": "480",
+			"numvcpus": "1"
+		}
+	}
+	],
+		"post-processors": [
+		{
+			"type": "vsphere",
+			"host": "vslab.dky.io",
+			"username": "vsphere@vsphere.local",
+			"password": "example",
+			"datacenter": "labdc",
+			"cluster": "openstack",
+			"resource_pool": " ",
+			"datastore": "ds1",
+			"vm_folder": "/",
+			"vm_name": "packer-rhel6-64",
+			"vm_network": "Production",
+			"insecure": "true"
+		}
+	],
+		"provisioners": [
+		{
+			"scripts": [
+			"scripts/vagrant.sh",
+			"scripts/mac.sh",
+			"scripts/sudo.sh",
+			"scripts/ssh.sh",
+			"scripts/vmtools.sh",
+			"scripts/zero.sh"
+				],
+			"type": "shell"
+		}
+	]
 }
 
