@@ -1,6 +1,5 @@
-Packer vsphere post processor 
-=============================
+# Packer Vsphere post processor 
 
-Provision a box with packer.io and upload to vsphere.
+Provision a box with Packer.io and upload to Vsphere.
 
 * Usage: packer build template.json
