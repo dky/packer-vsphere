@@ -2,7 +2,6 @@
 
 PACKERCMD=/usr/local/packer/packer
 VAGRANTCMD=/usr/bin/vagrant
-TERMINAL_NOTIFIER=/Users/p00007784/.rvm/gems/ruby-2.0.0-p195/bin/terminal-notifier
 BOXNAME1="centos6-32"
 BOXNAME2="centos6-64"
 
@@ -21,6 +20,3 @@ $VAGRANTCMD box add $BOXNAME2 packer_"$BOXNAME2"_vmware.box
 
 #Remove the boxes
 rm -f ./*.box
-
-$TERMINAL_NOTIFIER -message "Packer build for $BOXNAME1 and $BOXNAME2 complete" -title "Packer Builds"
-
